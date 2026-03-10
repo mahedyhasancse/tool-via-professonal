@@ -1,0 +1,53 @@
+import GuestLayout from '../../Layouts/GuestLayout';
+import { Link } from '@inertiajs/react';
+
+export default function AiTools() {
+    const tools = [
+        { icon: '✉️', name: 'AI Email Writer', desc: 'Write professional emails for any occasion in seconds.', href: '/tools/ai-email-writer' },
+        { icon: '🛍️', name: 'AI Product Description', desc: 'Create compelling, SEO-optimized product copy.', href: '/tools/ai-product-description' },
+        { icon: '📋', name: 'AI Resume Builder', desc: 'Build an ATS-friendly resume with action verbs.', href: '/tools/ai-resume-builder' },
+        { icon: '📄', name: 'AI Cover Letter', desc: 'Generate a tailored cover letter for any job.', href: '/tools/ai-cover-letter' },
+        { icon: '🏢', name: 'AI Business Name Generator', desc: 'Get 10 creative, brandable business name ideas.', href: '/tools/ai-business-name' },
+    ];
+
+    return (
+        <GuestLayout title="AI Tools - Toolvia.io" description="AI-powered writing tools for email, product descriptions, resumes, and more.">
+            <div style={{ paddingTop: 68 }}>
+                <div style={{ background: 'linear-gradient(135deg, #1a0845, #0d2060, #0a1628)', padding: '80px 0' }}>
+                    <div className="container" style={{ textAlign: 'center' }}>
+                        <div className="hero-badge" style={{ display: 'inline-flex', marginBottom: 16 }}>✨ Powered by Inception AI</div>
+                        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 900, color: '#fff', marginBottom: 14 }}>
+                            AI Tools for <span style={{ color: '#06B6D4' }}>Business Writing</span>
+                        </h1>
+                        <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1.05rem', maxWidth: 520, margin: '0 auto 32px' }}>
+                            Generate professional content in seconds using Inception Mercury AI — the fastest AI model.
+                        </p>
+                        <Link href="/pricing" className="btn btn-primary btn-lg">Unlock All AI Tools →</Link>
+                    </div>
+                </div>
+                <div className="container" style={{ padding: '56px 24px' }}>
+                    <div className="grid grid-3" style={{ gap: 24 }}>
+                        {tools.map(tool => (
+                            <Link key={tool.name} href={tool.href} className="feature-card" style={{ display: 'block', textDecoration: 'none' }}>
+                                <div style={{ fontSize: '2.5rem', marginBottom: 16 }}>{tool.icon}</div>
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                                    <h2 className="feature-title" style={{ margin: 0 }}>{tool.name}</h2>
+                                </div>
+                                <p className="feature-desc">{tool.desc}</p>
+                                <div style={{ marginTop: 16, color: 'var(--primary)', fontWeight: 600, fontSize: '0.88rem' }}>Try it now →</div>
+                            </Link>
+                        ))}
+                    </div>
+                    {/* Power badge */}
+                    <div style={{ marginTop: 60, textAlign: 'center', padding: '40px', background: 'linear-gradient(135deg, #EEF2FF, #F5F3FF)', borderRadius: 20, border: '1px solid rgba(124,58,237,0.15)' }}>
+                        <div style={{ fontSize: '2rem', marginBottom: 12 }}>🤖</div>
+                        <h3 style={{ fontSize: '1.2rem', fontWeight: 800, marginBottom: 8 }}>Powered by Inception Mercury</h3>
+                        <p style={{ color: 'var(--text-secondary)', maxWidth: 480, margin: '0 auto', fontSize: '0.9rem', lineHeight: 1.7 }}>
+                            Our AI tools run on Inception's Mercury model — designed for fast, accurate, and professional business content generation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </GuestLayout>
+    );
+}
