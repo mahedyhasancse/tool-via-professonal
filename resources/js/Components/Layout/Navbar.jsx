@@ -4,8 +4,6 @@ import Logo from '../Common/Logo';
 const navItems = [
     { label: 'Home', href: '/' },
     { label: 'All Tools', href: '/tools' },
-    { label: 'AI Tools', href: '/ai-tools' },
-    { label: 'Calculators', href: '/calculators' },
     { label: 'Blog', href: '/blog' },
     { label: 'Pricing', href: '/pricing' },
 ];
@@ -17,9 +15,13 @@ export default function Navbar() {
         <nav className="navbar">
             <div className="navbar-inner">
                 {/* Logo */}
-                <Link href="/" className="navbar-logo">
-                    <Logo size={30} />
-                    TOOL<span>VIA</span>.io
+                <Link href="/" className="navbar-logo" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+                    <div className="sidebar-logo-icon" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Logo size={22} />
+                    </div>
+                    <span className="sidebar-logo-text" style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                        TOOL<span style={{ color: 'var(--primary)' }}>VIA</span>.io
+                    </span>
                 </Link>
 
                 {/* Nav Links */}

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import ToolPageLayout from '../../../Layouts/ToolPageLayout';
+import { CURRENCIES, formatCurrency, getCurrencyByCode } from '../../../data/currencies';
 
 export default function SalaryCalculator() {
     const [gross, setGross] = useState('');
     const [period, setPeriod] = useState('annual');
     const [taxRate, setTaxRate] = useState('20');
+    const [currency, setCurrency] = useState('USD');
     const [result, setResult] = useState(null);
 
     const calculate = () => {
@@ -27,7 +29,13 @@ export default function SalaryCalculator() {
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>
                         <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 24 }}>Salary Details</h2>
-                        <label style={s.label}>Gross Salary ($)</label>
+                        <label style={s.label}>Currency</label>
+                        <select value={currency} onChange={e => setCurrency(e.target.value)} style={s.input}>
+                            {CURRENCIES.map(c => (
+                                <option key={c.code} value={c.code}>{c.flag} {c.code} - {c.name}</option>
+                            ))}
+                        </select>
+                        <label style={s.label}>Gross Salary</label>
                         <input type="number" value={gross} onChange={e => setGross(e.target.value)} placeholder="Enter amount" style={s.input} />
                         <label style={s.label}>Pay Period</label>
                         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
@@ -44,15 +52,15 @@ export default function SalaryCalculator() {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
                                 <div style={{ background: 'linear-gradient(135deg, var(--primary), var(--accent))', borderRadius: 16, padding: '22px', textAlign: 'center', color: '#fff', marginBottom: 4 }}>
                                     <div style={{ fontSize: '0.85rem', opacity: 0.8 }}>Net Monthly Take-Home</div>
-                                    <div style={{ fontSize: '2.6rem', fontWeight: 900 }}>${result.netMonthly.toLocaleString('en', { maximumFractionDigits: 2 })}</div>
+                                    <div style={{ fontSize: '2.6rem', fontWeight: 900 }}>{formatCurrency(result.netMonthly, currency)}</div>
                                 </div>
                                 {[
-                                    { label: '📅 Annual (Gross)', value: `$${result.annual.toLocaleString('en', { maximumFractionDigits: 2 })}` },
-                                    { label: '💸 Tax Deducted', value: `$${result.taxAmount.toLocaleString('en', { maximumFractionDigits: 2 })}`, color: '#EF4444' },
-                                    { label: '✅ Annual Net', value: `$${result.net.toLocaleString('en', { maximumFractionDigits: 2 })}`, color: '#10B981' },
-                                    { label: '🗓️ Weekly', value: `$${result.weekly.toFixed(2)}` },
-                                    { label: '📆 Daily', value: `$${result.daily.toFixed(2)}` },
-                                    { label: '⏱️ Hourly', value: `$${result.hourly.toFixed(2)}` },
+                                    { label: '📅 Annual (Gross)', value: formatCurrency(result.annual, currency) },
+                                    { label: '💸 Tax Deducted', value: formatCurrency(result.taxAmount, currency), color: '#EF4444' },
+                                    { label: '✅ Annual Net', value: formatCurrency(result.net, currency), color: '#10B981' },
+                                    { label: '🗓️ Weekly', value: formatCurrency(result.weekly, currency) },
+                                    { label: '📆 Daily', value: formatCurrency(result.daily, currency) },
+                                    { label: '⏱️ Hourly', value: formatCurrency(result.hourly, currency) },
                                 ].map(row => (
                                     <div key={row.label} style={{ background: 'var(--bg-light)', borderRadius: 8, padding: '11px 16px', display: 'flex', justifyContent: 'space-between', border: '1px solid var(--border-light)' }}>
                                         <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{row.label}</span>

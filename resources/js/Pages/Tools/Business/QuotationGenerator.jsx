@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import ToolPageLayout from '../../../Layouts/ToolPageLayout';
+import html2pdf from 'html2pdf.js';
+import { CURRENCIES, formatCurrency, getCurrencyByCode } from '../../../data/currencies';
 
 export default function QuotationGenerator() {
     const [from, setFrom] = useState({ name: '', email: '', address: '' });
@@ -10,6 +12,7 @@ export default function QuotationGenerator() {
     const [validUntil, setValidUntil] = useState('');
     const [notes, setNotes] = useState('This quotation is valid until the date above. Prices are subject to change after expiry.');
     const [vatRate, setVatRate] = useState('0');
+    const [currency, setCurrency] = useState('USD');
 
     const addItem = () => setItems([...items, { desc: '', qty: 1, price: '' }]);
     const removeItem = (i) => setItems(items.filter((_, idx) => idx !== i));
@@ -18,6 +21,51 @@ export default function QuotationGenerator() {
     const subtotal = items.reduce((s, i) => s + (parseFloat(i.qty) || 0) * (parseFloat(i.price) || 0), 0);
     const vat = subtotal * (parseFloat(vatRate) / 100);
     const total = subtotal + vat;
+    const quotationRef = useRef(null);
+
+    const downloadPDF = async () => {
+        if (!quotationRef.current) return;
+        
+        const element = quotationRef.current;
+        const contentElement = element.querySelector('div'); // Get the inner content div
+        
+        if (!contentElement) return;
+        
+        // Temporarily make element visible for rendering (off-screen but visible to html2canvas)
+        const originalStyle = element.style.cssText;
+        element.style.position = 'fixed';
+        element.style.left = '-2000px';
+        element.style.top = '0';
+        element.style.width = '800px';
+        element.style.zIndex = '-1';
+        element.style.visibility = 'visible';
+        element.style.opacity = '1';
+        
+        // Wait a bit for rendering
+        await new Promise(resolve => setTimeout(resolve, 200));
+        
+        const opt = {
+            margin: [10, 10, 10, 10],
+            filename: `Quotation-${quoteNo}.pdf`,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { 
+                scale: 2, 
+                useCORS: true,
+                logging: false,
+                windowWidth: 800,
+                allowTaint: true,
+                backgroundColor: '#ffffff'
+            },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        try {
+            await html2pdf().set(opt).from(contentElement).save();
+        } finally {
+            // Restore original style
+            element.style.cssText = originalStyle;
+        }
+    };
 
     const inpStyle = { padding: '8px 12px', borderRadius: 8, border: '1px solid var(--border)', fontSize: '0.85rem', color: 'var(--text-primary)', background: '#fff', outline: 'none', width: '100%' };
     const label = { fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: 4 };
@@ -25,12 +73,104 @@ export default function QuotationGenerator() {
     return (
         <ToolPageLayout title="Quotation Generator" description="Create professional business quotations instantly — free, no signup." category="Business Tools" categoryHref="/dashboard" categoryIcon="💼" icon="📋" badge="free">
             <div style={{ padding: '32px 40px' }}>
+                {/* Hidden printable version for PDF */}
+                <div ref={quotationRef} style={{ position: 'absolute', left: '-9999px', top: 0, width: '800px', visibility: 'hidden' }}>
+                    <div style={{ padding: '40px', background: '#fff', fontFamily: 'Inter, sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+                        {/* Header */}
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 40, borderBottom: '2px solid #10B981', paddingBottom: 20 }}>
+                            <div>
+                                <h1 style={{ fontSize: '2rem', fontWeight: 800, color: '#10B981', marginBottom: 8 }}>QUOTATION</h1>
+                                <div style={{ fontSize: '0.9rem', color: '#6B7280' }}>
+                                    <div><strong>Quotation #:</strong> {quoteNo}</div>
+                                    <div><strong>Date:</strong> {date}</div>
+                                    {validUntil && <div><strong>Valid Until:</strong> {validUntil}</div>}
+                                    <div><strong>Currency:</strong> {getCurrencyByCode(currency).flag} {currency}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* From / To */}
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, marginBottom: 40 }}>
+                            <div>
+                                <h3 style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6B7280', marginBottom: 12, textTransform: 'uppercase' }}>From</h3>
+                                <div style={{ fontSize: '0.95rem', lineHeight: 1.8 }}>
+                                    {from.name && <div style={{ fontWeight: 600 }}>{from.name}</div>}
+                                    {from.email && <div>{from.email}</div>}
+                                    {from.address && <div style={{ whiteSpace: 'pre-line' }}>{from.address}</div>}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 style={{ fontSize: '0.85rem', fontWeight: 700, color: '#6B7280', marginBottom: 12, textTransform: 'uppercase' }}>Quote To</h3>
+                                <div style={{ fontSize: '0.95rem', lineHeight: 1.8 }}>
+                                    {to.name && <div style={{ fontWeight: 600 }}>{to.name}</div>}
+                                    {to.email && <div>{to.email}</div>}
+                                    {to.address && <div style={{ whiteSpace: 'pre-line' }}>{to.address}</div>}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Items Table */}
+                        <table style={{ width: '100%', borderCollapse: 'collapse', marginBottom: 30 }}>
+                            <thead>
+                                <tr style={{ background: '#F3F4F6', borderBottom: '2px solid #E5E7EB' }}>
+                                    <th style={{ padding: '12px', textAlign: 'left', fontSize: '0.85rem', fontWeight: 700, color: '#374151' }}>Description</th>
+                                    <th style={{ padding: '12px', textAlign: 'center', fontSize: '0.85rem', fontWeight: 700, color: '#374151' }}>Qty</th>
+                                    <th style={{ padding: '12px', textAlign: 'right', fontSize: '0.85rem', fontWeight: 700, color: '#374151' }}>Unit Price</th>
+                                    <th style={{ padding: '12px', textAlign: 'right', fontSize: '0.85rem', fontWeight: 700, color: '#374151' }}>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {items.map((item, i) => {
+                                    const itemTotal = (parseFloat(item.qty) || 0) * (parseFloat(item.price) || 0);
+                                    return (
+                                        <tr key={i} style={{ borderBottom: '1px solid #E5E7EB' }}>
+                                            <td style={{ padding: '12px', fontSize: '0.9rem' }}>{item.desc || '-'}</td>
+                                            <td style={{ padding: '12px', textAlign: 'center', fontSize: '0.9rem' }}>{item.qty || 0}</td>
+                                            <td style={{ padding: '12px', textAlign: 'right', fontSize: '0.9rem' }}>{formatCurrency(item.price || 0, currency)}</td>
+                                            <td style={{ padding: '12px', textAlign: 'right', fontSize: '0.9rem', fontWeight: 600 }}>{formatCurrency(itemTotal, currency)}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+
+                        {/* Totals */}
+                        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 30 }}>
+                            <div style={{ minWidth: 250 }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #E5E7EB', fontSize: '0.9rem' }}>
+                                    <span style={{ color: '#6B7280' }}>Subtotal</span>
+                                    <span style={{ fontWeight: 600 }}>{formatCurrency(subtotal, currency)}</span>
+                                </div>
+                                {parseFloat(vatRate) > 0 && (
+                                    <div style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #E5E7EB', fontSize: '0.9rem' }}>
+                                        <span style={{ color: '#6B7280' }}>VAT ({vatRate}%)</span>
+                                        <span style={{ fontWeight: 600 }}>{formatCurrency(vat, currency)}</span>
+                                    </div>
+                                )}
+                                <div style={{ display: 'flex', justifyContent: 'space-between', padding: '16px 0', fontSize: '1.2rem', fontWeight: 800, color: '#10B981', borderTop: '2px solid #10B981' }}>
+                                    <span>Total</span>
+                                    <span>{formatCurrency(total, currency)}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Notes */}
+                        {notes && (
+                            <div style={{ marginTop: 30, padding: '16px', background: '#F9FAFB', borderRadius: 8, fontSize: '0.85rem', color: '#374151', lineHeight: 1.6 }}>
+                                <strong>Terms & Notes:</strong> {notes}
+                            </div>
+                        )}
+                    </div>
+                </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 28, flexWrap: 'wrap', gap: 12 }}>
                     <div>
                         <h2 style={{ fontSize: '1.1rem', fontWeight: 700 }}>Quotation Details</h2>
                         <span className="badge badge-primary" style={{ marginTop: 4 }}>Quotation</span>
                     </div>
-                    <button className="btn btn-primary" onClick={() => window.print()}>🖨️ Print / Save PDF</button>
+                    <div style={{ display: 'flex', gap: 10 }}>
+                        <button className="btn btn-secondary" onClick={() => window.print()}>🖨️ Print</button>
+                        <button className="btn btn-primary" onClick={downloadPDF}>📥 Download PDF</button>
+                    </div>
                 </div>
 
                 <div className="grid grid-2" style={{ gap: 20, marginBottom: 24 }}>
@@ -45,6 +185,14 @@ export default function QuotationGenerator() {
                     <div>
                         <label style={label}>Valid Until</label>
                         <input type="date" value={validUntil} onChange={e => setValidUntil(e.target.value)} style={inpStyle} />
+                    </div>
+                    <div>
+                        <label style={label}>Currency</label>
+                        <select value={currency} onChange={e => setCurrency(e.target.value)} style={inpStyle}>
+                            {CURRENCIES.map(c => (
+                                <option key={c.code} value={c.code}>{c.flag} {c.code} - {c.name}</option>
+                            ))}
+                        </select>
                     </div>
                     <div>
                         <label style={label}>VAT Rate (%)</label>
@@ -87,8 +235,8 @@ export default function QuotationGenerator() {
                 <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                     <div style={{ minWidth: 280 }}>
                         {[
-                            { label: 'Subtotal', value: `$${subtotal.toFixed(2)}` },
-                            { label: `VAT (${vatRate}%)`, value: `$${vat.toFixed(2)}` },
+                            { label: 'Subtotal', value: formatCurrency(subtotal, currency) },
+                            { label: `VAT (${vatRate}%)`, value: formatCurrency(vat, currency) },
                         ].map(row => (
                             <div key={row.label} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid var(--border-light)', fontSize: '0.9rem' }}>
                                 <span style={{ color: 'var(--text-secondary)' }}>{row.label}</span>
@@ -96,7 +244,7 @@ export default function QuotationGenerator() {
                             </div>
                         ))}
                         <div style={{ display: 'flex', justifyContent: 'space-between', padding: '14px 0', fontSize: '1.1rem', fontWeight: 800, color: 'var(--primary)' }}>
-                            <span>Total</span><span>${total.toFixed(2)}</span>
+                            <span>Total</span><span>{formatCurrency(total, currency)}</span>
                         </div>
                     </div>
                 </div>
