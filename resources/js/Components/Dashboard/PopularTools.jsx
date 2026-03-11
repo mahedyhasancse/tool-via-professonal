@@ -20,7 +20,11 @@ export default function PopularTools() {
             </div>
 
             {/* Tools grid */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: 12 }}>
+            <div className="popular-tools-grid-dash" style={{ 
+                display: 'grid', 
+                gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', 
+                gap: 12 
+            }}>
                 {featured.map(tool => (
                     <Link key={tool.id} href={tool.href} style={{
                         display: 'flex', alignItems: 'center', gap: 13,

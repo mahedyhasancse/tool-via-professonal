@@ -58,13 +58,13 @@ export default function Home() {
             {/* Popular Tools */}
             <section className="section-sm" style={{ background: '#fff' }}>
                 <div className="container">
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 12 }}>
-                        <div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 16 }}>
+                        <div style={{ flex: 1, minWidth: '280px' }}>
                             <div className="section-tag">🔥 Most Used</div>
-                            <h2 className="section-title">Popular Tools</h2>
-                            <p className="section-subtitle">Start with our most-loved tools — all free, no account needed.</p>
+                            <h2 className="section-title" style={{ marginTop: 8 }}>Popular Tools</h2>
+                            <p className="section-subtitle" style={{ marginTop: 8 }}>Start with our most-loved tools — all free, no account needed.</p>
                         </div>
-                        <Link href="/tools" className="btn btn-outline">View All Tools →</Link>
+                        <Link href="/tools" className="btn btn-outline" style={{ flexShrink: 0, marginTop: 'auto' }}>View All Tools →</Link>
                     </div>
                     <ToolsGrid limit={8} />
                 </div>

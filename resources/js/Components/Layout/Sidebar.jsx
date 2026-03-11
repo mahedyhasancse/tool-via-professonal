@@ -28,20 +28,27 @@ const navSections = [
 ];
 
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }) {
     const { url } = usePage();
 
     return (
-        <aside className="sidebar">
-            {/* Logo */}
-            <div className="sidebar-logo">
-                <div className="sidebar-logo-icon">
-                    <Logo size={22} />
+        <>
+            {/* Mobile Overlay */}
+            <div className="sidebar-overlay" onClick={onClose}></div>
+            <aside className="sidebar">
+                {/* Logo */}
+                <div className="sidebar-logo">
+                    <div className="sidebar-logo-icon">
+                        <Logo size={22} />
+                    </div>
+                    <span className="sidebar-logo-text">
+                        TOOL<span>VIA</span>.io
+                    </span>
+                    {/* Mobile Close Button */}
+                    <button className="sidebar-close-btn" onClick={onClose} aria-label="Close sidebar">
+                        ✕
+                    </button>
                 </div>
-                <span className="sidebar-logo-text">
-                    TOOL<span>VIA</span>.io
-                </span>
-            </div>
 
             {/* Navigation */}
             <nav className="sidebar-nav">
@@ -73,5 +80,6 @@ export default function Sidebar() {
                 <button className="btn-upgrade">Upgrade Now</button>
             </div>
         </aside>
+        </>
     );
 }
