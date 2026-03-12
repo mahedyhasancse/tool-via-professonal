@@ -73,7 +73,7 @@ export default function InvoiceGenerator() {
     const label = { fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: 4 };
 
     return (
-        <ToolPageLayout title="Invoice Generator" description="Create and print professional invoices instantly — free, no signup." category="Business Tools" categoryHref="/dashboard" categoryIcon="💼" icon="🧾" badge="free">
+        <ToolPageLayout title="Invoice Generator" description="Create and print professional invoices instantly — free, no signup." category="Business Tools" categoryHref="/business-tools" categoryIcon="💼" icon="🧾" badge="free">
             <div style={{ padding: '32px 40px' }}>
                 {/* Hidden printable version for PDF */}
                 <div ref={invoiceRef} style={{ position: 'absolute', left: '-9999px', top: 0, width: '800px', visibility: 'hidden' }}>

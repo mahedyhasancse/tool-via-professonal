@@ -1,0 +1,748 @@
+{
+  "_AiToolBase-Dh4PLhrT.js": {
+    "file": "assets/AiToolBase-Dh4PLhrT.js",
+    "name": "AiToolBase",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_DashboardCategoryPage-CMb8RmAX.js": {
+    "file": "assets/DashboardCategoryPage-CMb8RmAX.js",
+    "name": "DashboardCategoryPage",
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_tools-BOmTjm6v.js"
+    ]
+  },
+  "_DashboardLayout-BAdYmjn2.js": {
+    "file": "assets/DashboardLayout-BAdYmjn2.js",
+    "name": "DashboardLayout",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Logo-BFD3WcqD.js"
+    ]
+  },
+  "_GuestLayout-BJr3PRMY.js": {
+    "file": "assets/GuestLayout-BJr3PRMY.js",
+    "name": "GuestLayout",
+    "imports": [
+      "resources/js/app.jsx",
+      "_Logo-BFD3WcqD.js"
+    ]
+  },
+  "_Logo-BFD3WcqD.js": {
+    "file": "assets/Logo-BFD3WcqD.js",
+    "name": "Logo",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_PdfToJpg-fu-iP7gb.js": {
+    "file": "assets/PdfToJpg-fu-iP7gb.js",
+    "name": "PdfToJpg",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js"
+    ],
+    "dynamicImports": [
+      "node_modules/html2canvas/dist/html2canvas.esm.js",
+      "node_modules/dompurify/dist/purify.es.mjs",
+      "node_modules/canvg/lib/index.es.js"
+    ]
+  },
+  "_ToolIcons-D0L8jWCL.js": {
+    "file": "assets/ToolIcons-D0L8jWCL.js",
+    "name": "ToolIcons",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_ToolPageLayout-BeHrccNt.js": {
+    "file": "assets/ToolPageLayout-BeHrccNt.js",
+    "name": "ToolPageLayout",
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardLayout-BAdYmjn2.js"
+    ]
+  },
+  "_currencies-Bv_1wS6_.js": {
+    "file": "assets/currencies-Bv_1wS6_.js",
+    "name": "currencies"
+  },
+  "_html2pdf-C5cBDCGG.js": {
+    "file": "assets/html2pdf-C5cBDCGG.js",
+    "name": "html2pdf",
+    "imports": [
+      "resources/js/app.jsx"
+    ]
+  },
+  "_tools-BOmTjm6v.js": {
+    "file": "assets/tools-BOmTjm6v.js",
+    "name": "tools",
+    "imports": [
+      "_ToolIcons-D0L8jWCL.js"
+    ]
+  },
+  "node_modules/canvg/lib/index.es.js": {
+    "file": "assets/index.es-CKlL8RJc.js",
+    "name": "index.es",
+    "src": "node_modules/canvg/lib/index.es.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_PdfToJpg-fu-iP7gb.js",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "node_modules/dompurify/dist/purify.es.mjs": {
+    "file": "assets/purify.es-C0_7NiBM.js",
+    "name": "purify.es",
+    "src": "node_modules/dompurify/dist/purify.es.mjs",
+    "isDynamicEntry": true
+  },
+  "node_modules/html2canvas/dist/html2canvas.esm.js": {
+    "file": "assets/html2canvas.esm-DXEQVQnt.js",
+    "name": "html2canvas.esm",
+    "src": "node_modules/html2canvas/dist/html2canvas.esm.js",
+    "isDynamicEntry": true
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-CyN6t6Dj.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "name": "app",
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/Pages/Admin/Users/Index.jsx": {
+    "file": "assets/Index-s02uVY3t.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Admin/Users/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Auth/Login.jsx": {
+    "file": "assets/Login-DNo1fkfn.js",
+    "name": "Login",
+    "src": "resources/js/Pages/Auth/Login.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Auth/Register.jsx": {
+    "file": "assets/Register-B2iM4RIH.js",
+    "name": "Register",
+    "src": "resources/js/Pages/Auth/Register.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Dashboard/AiTools.jsx": {
+    "file": "assets/AiTools-DgH_CjvU.js",
+    "name": "AiTools",
+    "src": "resources/js/Pages/Dashboard/AiTools.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardCategoryPage-CMb8RmAX.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js",
+      "_tools-BOmTjm6v.js",
+      "_ToolIcons-D0L8jWCL.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Dashboard/BusinessTools.jsx": {
+    "file": "assets/BusinessTools-8gVGlcyN.js",
+    "name": "BusinessTools",
+    "src": "resources/js/Pages/Dashboard/BusinessTools.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardCategoryPage-CMb8RmAX.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js",
+      "_tools-BOmTjm6v.js",
+      "_ToolIcons-D0L8jWCL.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Dashboard/Calculators.jsx": {
+    "file": "assets/Calculators-BdI4_izm.js",
+    "name": "Calculators",
+    "src": "resources/js/Pages/Dashboard/Calculators.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardCategoryPage-CMb8RmAX.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js",
+      "_tools-BOmTjm6v.js",
+      "_ToolIcons-D0L8jWCL.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Dashboard/Index.jsx": {
+    "file": "assets/Index-B6VpzeBs.js",
+    "name": "Index",
+    "src": "resources/js/Pages/Dashboard/Index.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_tools-BOmTjm6v.js",
+      "_ToolIcons-D0L8jWCL.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Dashboard/PdfTools.jsx": {
+    "file": "assets/PdfTools-CFNULz1O.js",
+    "name": "PdfTools",
+    "src": "resources/js/Pages/Dashboard/PdfTools.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardCategoryPage-CMb8RmAX.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js",
+      "_tools-BOmTjm6v.js",
+      "_ToolIcons-D0L8jWCL.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Dashboard/SeoTools.jsx": {
+    "file": "assets/SeoTools-CCpYJjFX.js",
+    "name": "SeoTools",
+    "src": "resources/js/Pages/Dashboard/SeoTools.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_DashboardCategoryPage-CMb8RmAX.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js",
+      "_tools-BOmTjm6v.js",
+      "_ToolIcons-D0L8jWCL.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Landing/AiTools.jsx": {
+    "file": "assets/AiTools-inpEKI8l.js",
+    "name": "AiTools",
+    "src": "resources/js/Pages/Landing/AiTools.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Landing/Blog.jsx": {
+    "file": "assets/Blog-Ddb48-sw.js",
+    "name": "Blog",
+    "src": "resources/js/Pages/Landing/Blog.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Landing/Calculators.jsx": {
+    "file": "assets/Calculators-EukqwkcX.js",
+    "name": "Calculators",
+    "src": "resources/js/Pages/Landing/Calculators.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Landing/Home.jsx": {
+    "file": "assets/Home-1qD0HRks.js",
+    "name": "Home",
+    "src": "resources/js/Pages/Landing/Home.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_ToolIcons-D0L8jWCL.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Landing/Pricing.jsx": {
+    "file": "assets/Pricing-CtKvGxmd.js",
+    "name": "Pricing",
+    "src": "resources/js/Pages/Landing/Pricing.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Landing/Tools.jsx": {
+    "file": "assets/Tools-BgMNFHEh.js",
+    "name": "Tools",
+    "src": "resources/js/Pages/Landing/Tools.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_tools-BOmTjm6v.js",
+      "_Logo-BFD3WcqD.js",
+      "_ToolIcons-D0L8jWCL.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Sitemap.jsx": {
+    "file": "assets/Sitemap-LZvZoJVO.js",
+    "name": "Sitemap",
+    "src": "resources/js/Pages/Sitemap.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_GuestLayout-BJr3PRMY.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Ai/BusinessName.jsx": {
+    "file": "assets/BusinessName-CaHDG6t0.js",
+    "name": "BusinessName",
+    "src": "resources/js/Pages/Tools/Ai/BusinessName.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_AiToolBase-Dh4PLhrT.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Ai/CoverLetter.jsx": {
+    "file": "assets/CoverLetter-ttWcHUbe.js",
+    "name": "CoverLetter",
+    "src": "resources/js/Pages/Tools/Ai/CoverLetter.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_AiToolBase-Dh4PLhrT.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Ai/EmailWriter.jsx": {
+    "file": "assets/EmailWriter-BluzvOeI.js",
+    "name": "EmailWriter",
+    "src": "resources/js/Pages/Tools/Ai/EmailWriter.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_AiToolBase-Dh4PLhrT.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Ai/ProductDescription.jsx": {
+    "file": "assets/ProductDescription-CboTjbYZ.js",
+    "name": "ProductDescription",
+    "src": "resources/js/Pages/Tools/Ai/ProductDescription.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_AiToolBase-Dh4PLhrT.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Ai/ResumeBuilder.jsx": {
+    "file": "assets/ResumeBuilder-CgaDRvQG.js",
+    "name": "ResumeBuilder",
+    "src": "resources/js/Pages/Tools/Ai/ResumeBuilder.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_AiToolBase-Dh4PLhrT.js",
+      "_html2pdf-C5cBDCGG.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Business/BreakEvenCalculator.jsx": {
+    "file": "assets/BreakEvenCalculator-DmlkRgLG.js",
+    "name": "BreakEvenCalculator",
+    "src": "resources/js/Pages/Tools/Business/BreakEvenCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Business/CurrencyConverter.jsx": {
+    "file": "assets/CurrencyConverter-DgnyYkiQ.js",
+    "name": "CurrencyConverter",
+    "src": "resources/js/Pages/Tools/Business/CurrencyConverter.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Business/InvoiceGenerator.jsx": {
+    "file": "assets/InvoiceGenerator-BH6khmPb.js",
+    "name": "InvoiceGenerator",
+    "src": "resources/js/Pages/Tools/Business/InvoiceGenerator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_html2pdf-C5cBDCGG.js",
+      "_currencies-Bv_1wS6_.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Business/QuotationGenerator.jsx": {
+    "file": "assets/QuotationGenerator-C_Cs9WUt.js",
+    "name": "QuotationGenerator",
+    "src": "resources/js/Pages/Tools/Business/QuotationGenerator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_html2pdf-C5cBDCGG.js",
+      "_currencies-Bv_1wS6_.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Business/UnitConverter.jsx": {
+    "file": "assets/UnitConverter-SMpJOVwx.js",
+    "name": "UnitConverter",
+    "src": "resources/js/Pages/Tools/Business/UnitConverter.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/AgeCalculator.jsx": {
+    "file": "assets/AgeCalculator-CKVyLucy.js",
+    "name": "AgeCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/AgeCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/DiscountCalculator.jsx": {
+    "file": "assets/DiscountCalculator-Bd1Kl-HV.js",
+    "name": "DiscountCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/DiscountCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/LoanCalculator.jsx": {
+    "file": "assets/LoanCalculator-BH4xV4Rh.js",
+    "name": "LoanCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/LoanCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/PercentageCalculator.jsx": {
+    "file": "assets/PercentageCalculator-CR3QnAUN.js",
+    "name": "PercentageCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/PercentageCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/ProfitMarginCalculator.jsx": {
+    "file": "assets/ProfitMarginCalculator-ai6ZmFDX.js",
+    "name": "ProfitMarginCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/ProfitMarginCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/RoiCalculator.jsx": {
+    "file": "assets/RoiCalculator-DY3J6M95.js",
+    "name": "RoiCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/RoiCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/SalaryCalculator.jsx": {
+    "file": "assets/SalaryCalculator-BnDotCNh.js",
+    "name": "SalaryCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/SalaryCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_currencies-Bv_1wS6_.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Calculators/VatCalculator.jsx": {
+    "file": "assets/VatCalculator-CEA5AheA.js",
+    "name": "VatCalculator",
+    "src": "resources/js/Pages/Tools/Calculators/VatCalculator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Seo/KeywordDensity.jsx": {
+    "file": "assets/KeywordDensity-bGWFmGCf.js",
+    "name": "KeywordDensity",
+    "src": "resources/js/Pages/Tools/Seo/KeywordDensity.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Seo/MetaTagGenerator.jsx": {
+    "file": "assets/MetaTagGenerator-Cs8qyDf6.js",
+    "name": "MetaTagGenerator",
+    "src": "resources/js/Pages/Tools/Seo/MetaTagGenerator.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/Pages/Tools/Seo/WordCounter.jsx": {
+    "file": "assets/WordCounter-hP-fmO7W.js",
+    "name": "WordCounter",
+    "src": "resources/js/Pages/Tools/Seo/WordCounter.jsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.jsx",
+      "_ToolPageLayout-BeHrccNt.js",
+      "_DashboardLayout-BAdYmjn2.js",
+      "_Logo-BFD3WcqD.js"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-BkuHZnjW.js",
+    "name": "app",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Admin/Users/Index.jsx",
+      "resources/js/Pages/Auth/Login.jsx",
+      "resources/js/Pages/Auth/Register.jsx",
+      "resources/js/Pages/Dashboard/AiTools.jsx",
+      "resources/js/Pages/Dashboard/BusinessTools.jsx",
+      "resources/js/Pages/Dashboard/Calculators.jsx",
+      "resources/js/Pages/Dashboard/Index.jsx",
+      "resources/js/Pages/Dashboard/PdfTools.jsx",
+      "resources/js/Pages/Dashboard/SeoTools.jsx",
+      "resources/js/Pages/Landing/AiTools.jsx",
+      "resources/js/Pages/Landing/Blog.jsx",
+      "resources/js/Pages/Landing/Calculators.jsx",
+      "resources/js/Pages/Landing/Home.jsx",
+      "resources/js/Pages/Landing/Pricing.jsx",
+      "resources/js/Pages/Landing/Tools.jsx",
+      "resources/js/Pages/Sitemap.jsx",
+      "resources/js/Pages/Tools/Ai/BusinessName.jsx",
+      "resources/js/Pages/Tools/Ai/CoverLetter.jsx",
+      "resources/js/Pages/Tools/Ai/EmailWriter.jsx",
+      "resources/js/Pages/Tools/Ai/ProductDescription.jsx",
+      "resources/js/Pages/Tools/Ai/ResumeBuilder.jsx",
+      "resources/js/Pages/Tools/Business/BreakEvenCalculator.jsx",
+      "resources/js/Pages/Tools/Business/CurrencyConverter.jsx",
+      "resources/js/Pages/Tools/Business/InvoiceGenerator.jsx",
+      "resources/js/Pages/Tools/Business/QuotationGenerator.jsx",
+      "resources/js/Pages/Tools/Business/UnitConverter.jsx",
+      "resources/js/Pages/Tools/Calculators/AgeCalculator.jsx",
+      "resources/js/Pages/Tools/Calculators/DiscountCalculator.jsx",
+      "resources/js/Pages/Tools/Calculators/LoanCalculator.jsx",
+      "resources/js/Pages/Tools/Calculators/PercentageCalculator.jsx",
+      "resources/js/Pages/Tools/Calculators/ProfitMarginCalculator.jsx",
+      "resources/js/Pages/Tools/Calculators/RoiCalculator.jsx",
+      "resources/js/Pages/Tools/Calculators/SalaryCalculator.jsx",
+      "resources/js/Pages/Tools/Calculators/VatCalculator.jsx",
+      "_PdfToJpg-fu-iP7gb.js",
+      "_PdfToJpg-fu-iP7gb.js",
+      "_PdfToJpg-fu-iP7gb.js",
+      "_PdfToJpg-fu-iP7gb.js",
+      "_PdfToJpg-fu-iP7gb.js",
+      "resources/js/Pages/Tools/Seo/KeywordDensity.jsx",
+      "resources/js/Pages/Tools/Seo/MetaTagGenerator.jsx",
+      "resources/js/Pages/Tools/Seo/WordCounter.jsx"
+    ],
+    "css": [
+      "assets/app-CyN6t6Dj.css"
+    ]
+  }
+}

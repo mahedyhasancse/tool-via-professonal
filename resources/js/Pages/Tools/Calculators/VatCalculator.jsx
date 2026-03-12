@@ -30,7 +30,7 @@ export default function VatCalculator() {
             title="VAT Calculator"
             description="Calculate VAT instantly — add or remove VAT from any amount with any rate."
             category="Calculators"
-            categoryHref="/dashboard/calculators"
+            categoryHref="/calculators"
             categoryIcon="🧮"
             icon="🧾"
             badge="free"

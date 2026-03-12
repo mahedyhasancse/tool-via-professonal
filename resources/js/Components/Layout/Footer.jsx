@@ -21,6 +21,7 @@ const footerLinks = {
         { label: 'Terms of Service', href: '/' },
         { label: 'Cookie Policy', href: '/' },
         { label: 'GDPR', href: '/' },
+        { label: 'Sitemap', href: '/sitemap' },
     ],
 };
 

@@ -33,7 +33,7 @@ export default function AgeCalculator() {
     const inputStyle = { width: '100%', padding: '11px 16px', borderRadius: 10, border: '1px solid var(--border)', fontSize: '0.95rem', color: 'var(--text-primary)', background: '#fff', outline: 'none' };
 
     return (
-        <ToolPageLayout title="Age Calculator" description="Calculate exact age in years, months, days and more." category="Calculators" categoryHref="/dashboard/calculators" categoryIcon="🧮" icon="🎂" badge="free">
+        <ToolPageLayout title="Age Calculator" description="Calculate exact age in years, months, days and more." category="Calculators" categoryHref="/calculators" categoryIcon="🧮" icon="🎂" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>

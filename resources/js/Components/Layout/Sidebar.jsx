@@ -1,35 +1,35 @@
 import { Link, usePage } from '@inertiajs/react';
 import Logo from '../Common/Logo';
 
-const navSections = [
-    {
-        label: 'Dashboard',
-        items: [
-            { icon: '⊟', label: 'Overview', href: '/dashboard' },
-        ],
-    },
-    {
-        label: 'Tool Categories',
-        items: [
-            { icon: '🧮', label: 'Calculators', href: '/dashboard/calculators' },
-            { icon: '💼', label: 'Business Tools', href: '/dashboard/business-tools' },
-            { icon: '🤖', label: 'AI Tools', href: '/dashboard/ai-tools' },
-            { icon: '📄', label: 'PDF Tools', href: '/dashboard/pdf-tools' },
-            { icon: '🔍', label: 'SEO Tools', href: '/dashboard/seo-tools' },
-        ],
-    },
-    {
-        label: 'Account',
-        items: [
-            { icon: '💎', label: 'Pricing', href: '/pricing' },
-            { icon: '⚙️', label: 'Settings', href: '/dashboard' },
-        ],
-    },
-];
-
-
 export default function Sidebar({ onClose }) {
-    const { url } = usePage();
+    const { url, auth } = usePage().props;
+    
+    const navSections = [
+        {
+            label: 'Dashboard',
+            items: [
+                { icon: '⊟', label: 'Overview', href: '/dashboard' },
+            ],
+        },
+        {
+            label: 'Tool Categories',
+            items: [
+                { icon: '🧮', label: 'Calculators', href: '/calculators' },
+                { icon: '💼', label: 'Business Tools', href: '/business-tools' },
+                { icon: '🤖', label: 'AI Tools', href: '/ai-tools' },
+                { icon: '📄', label: 'PDF Tools', href: '/pdf-tools' },
+                { icon: '🔍', label: 'SEO Tools', href: '/seo-tools' },
+            ],
+        },
+        {
+            label: 'Account',
+            items: [
+                { icon: '💎', label: 'Pricing', href: '/pricing' },
+                { icon: '⚙️', label: 'Settings', href: '/dashboard' },
+                ...(auth?.user?.is_super_admin ? [{ icon: '👥', label: 'User Management', href: '/admin/users' }] : []),
+            ],
+        },
+    ];
 
     return (
         <>

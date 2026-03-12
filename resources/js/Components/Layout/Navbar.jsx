@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, usePage } from '@inertiajs/react';
+import { Link, usePage, router } from '@inertiajs/react';
 import Logo from '../Common/Logo';
 
 const navItems = [
@@ -10,7 +10,8 @@ const navItems = [
 ];
 
 export default function Navbar() {
-    const { url } = usePage();
+    const { url, props } = usePage();
+    const { auth } = props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     // Close mobile menu when route changes
@@ -60,12 +61,33 @@ export default function Navbar() {
 
                     {/* Desktop Actions */}
                     <div className="navbar-actions">
-                        <Link href="/dashboard" className="btn btn-secondary btn-sm">
-                            Dashboard
-                        </Link>
-                        <Link href="/pricing" className="btn btn-primary btn-sm">
-                            ✨ Upgrade Pro
-                        </Link>
+                        {auth?.user ? (
+                            <>
+                                <Link href="/dashboard" className="btn btn-secondary btn-sm">
+                                    Dashboard
+                                </Link>
+                                {auth.user.is_super_admin && (
+                                    <Link href="/admin/users" className="btn btn-secondary btn-sm">
+                                        👥 Admin
+                                    </Link>
+                                )}
+                                <button 
+                                    onClick={() => router.post('/logout')}
+                                    className="btn btn-secondary btn-sm"
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link href="/login" className="btn btn-secondary btn-sm">
+                                    Sign In
+                                </Link>
+                                <Link href="/register" className="btn btn-primary btn-sm">
+                                    Sign Up
+                                </Link>
+                            </>
+                        )}
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -109,12 +131,37 @@ export default function Navbar() {
                         ))}
                     </ul>
                     <div className="mobile-menu-actions">
-                        <Link href="/dashboard" className="btn btn-secondary" onClick={() => setMobileMenuOpen(false)}>
-                            Dashboard
-                        </Link>
-                        <Link href="/pricing" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>
-                            ✨ Upgrade Pro
-                        </Link>
+                        {auth?.user ? (
+                            <>
+                                <Link href="/dashboard" className="btn btn-secondary" onClick={() => setMobileMenuOpen(false)}>
+                                    Dashboard
+                                </Link>
+                                {auth.user.is_super_admin && (
+                                    <Link href="/admin/users" className="btn btn-secondary" onClick={() => setMobileMenuOpen(false)}>
+                                        👥 Admin
+                                    </Link>
+                                )}
+                                <button 
+                                    onClick={() => {
+                                        router.post('/logout');
+                                        setMobileMenuOpen(false);
+                                    }}
+                                    className="btn btn-secondary" 
+                                    style={{ width: '100%' }}
+                                >
+                                    Logout
+                                </button>
+                            </>
+                        ) : (
+                            <>
+                                <Link href="/login" className="btn btn-secondary" onClick={() => setMobileMenuOpen(false)}>
+                                    Sign In
+                                </Link>
+                                <Link href="/pricing" className="btn btn-primary" onClick={() => setMobileMenuOpen(false)}>
+                                    ✨ Upgrade Pro
+                                </Link>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ export default function ProductDescription() {
     const input = { width: '100%', padding: '11px 16px', borderRadius: 10, border: '1px solid var(--border)', fontSize: '0.88rem', color: 'var(--text-primary)', background: '#fff', outline: 'none', marginBottom: 16 };
 
     return (
-        <ToolPageLayout title="AI Product Description Generator" description="Create compelling, SEO-optimized product descriptions with AI." category="AI Tools" categoryHref="/dashboard/ai-tools" categoryIcon="🤖" icon="🛍️" badge="pro">
+        <ToolPageLayout title="AI Product Description Generator" description="Create compelling, SEO-optimized product descriptions with AI." category="AI Tools" categoryHref="/ai-tools" categoryIcon="🤖" icon="🛍️" badge="pro">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>

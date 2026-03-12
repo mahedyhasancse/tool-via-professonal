@@ -1,0 +1,1 @@
+import{j as r}from"./app-BkuHZnjW.js";import{D as o}from"./DashboardCategoryPage-CMb8RmAX.js";/* empty css            */import"./DashboardLayout-BAdYmjn2.js";import"./Logo-BFD3WcqD.js";import"./tools-BOmTjm6v.js";import"./ToolIcons-D0L8jWCL.js";function u(){return r.jsx(o,{categoryKey:"calculators"})}export{u as default};

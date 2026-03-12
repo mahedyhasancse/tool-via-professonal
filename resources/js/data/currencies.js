@@ -89,10 +89,17 @@ export const getCurrencyByCode = (code) => {
 // Helper function to format amount with currency
 export const formatCurrency = (amount, currencyCode = 'USD') => {
     const currency = getCurrencyByCode(currencyCode);
-    const formattedAmount = parseFloat(amount || 0).toFixed(2);
+    const numAmount = parseFloat(amount || 0);
     
-    // Some currencies put symbol after (like EUR, GBP)
-    if (['EUR', 'GBP'].includes(currencyCode)) {
+    // Format number with thousand separators and 2 decimal places
+    const formattedAmount = numAmount.toLocaleString('en-US', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+    
+    // Some currencies put symbol after (like EUR, GBP, and some others)
+    const symbolAfter = ['EUR', 'GBP', 'SEK', 'NOK', 'DKK', 'RON', 'HUF', 'CZK', 'PLN'];
+    if (symbolAfter.includes(currencyCode)) {
         return `${formattedAmount} ${currency.symbol}`;
     }
     // Most currencies put symbol before

@@ -28,7 +28,7 @@ export default function KeywordDensity() {
     };
 
     return (
-        <ToolPageLayout title="Keyword Density Checker" description="Analyze keyword frequency and density in any text or page content." category="SEO Tools" categoryHref="/dashboard" categoryIcon="🔍" icon="🔑" badge="free">
+        <ToolPageLayout title="Keyword Density Checker" description="Analyze keyword frequency and density in any text or page content." category="SEO Tools" categoryHref="/seo-tools" categoryIcon="🔍" icon="🔑" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>

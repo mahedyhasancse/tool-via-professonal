@@ -63,7 +63,7 @@ export default function UnitConverter() {
     const sel = { width: '100%', padding: '11px 16px', borderRadius: 10, border: '1px solid var(--border)', fontSize: '0.9rem', color: 'var(--text-primary)', background: '#fff', outline: 'none', cursor: 'pointer' };
 
     return (
-        <ToolPageLayout title="Unit Converter" description="Convert between any units — length, weight, temperature, area, speed, and volume." category="Business Tools" categoryHref="/dashboard" categoryIcon="💼" icon="📏" badge="free">
+        <ToolPageLayout title="Unit Converter" description="Convert between any units — length, weight, temperature, area, speed, and volume." category="Business Tools" categoryHref="/business-tools" categoryIcon="💼" icon="📏" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 {/* Category Tabs */}
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 28 }}>

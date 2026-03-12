@@ -71,7 +71,7 @@ export default function QuotationGenerator() {
     const label = { fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-secondary)', display: 'block', marginBottom: 4 };
 
     return (
-        <ToolPageLayout title="Quotation Generator" description="Create professional business quotations instantly — free, no signup." category="Business Tools" categoryHref="/dashboard" categoryIcon="💼" icon="📋" badge="free">
+        <ToolPageLayout title="Quotation Generator" description="Create professional business quotations instantly — free, no signup." category="Business Tools" categoryHref="/business-tools" categoryIcon="💼" icon="📋" badge="free">
             <div style={{ padding: '32px 40px' }}>
                 {/* Hidden printable version for PDF */}
                 <div ref={quotationRef} style={{ position: 'absolute', left: '-9999px', top: 0, width: '800px', visibility: 'hidden' }}>

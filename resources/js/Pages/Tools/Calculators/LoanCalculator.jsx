@@ -22,7 +22,7 @@ export default function LoanCalculator() {
     const inputStyle = { width: '100%', padding: '11px 16px', borderRadius: 10, border: '1px solid var(--border)', fontSize: '0.95rem', color: 'var(--text-primary)', background: '#fff', outline: 'none', marginBottom: 20 };
 
     return (
-        <ToolPageLayout title="Loan Calculator" description="Calculate monthly payments, total interest and full loan cost instantly." category="Calculators" categoryHref="/dashboard/calculators" categoryIcon="🧮" icon="🏦" badge="free">
+        <ToolPageLayout title="Loan Calculator" description="Calculate monthly payments, total interest and full loan cost instantly." category="Calculators" categoryHref="/calculators" categoryIcon="🧮" icon="🏦" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>

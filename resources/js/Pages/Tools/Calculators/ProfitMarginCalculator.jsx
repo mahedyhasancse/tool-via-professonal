@@ -23,7 +23,7 @@ export default function ProfitMarginCalculator() {
         <ToolPageLayout
             title="Profit Margin Calculator"
             description="Calculate your profit margin, markup percentage and net profit instantly."
-            category="Calculators" categoryHref="/dashboard/calculators" categoryIcon="🧮" icon="📈" badge="free"
+            category="Calculators" categoryHref="/calculators" categoryIcon="🧮" icon="📈" badge="free"
         >
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>

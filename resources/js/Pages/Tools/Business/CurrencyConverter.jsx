@@ -135,7 +135,7 @@ export default function CurrencyConverter() {
     };
 
     return (
-        <ToolPageLayout title="Currency Converter" description="Convert between 80+ world currencies with real-time exchange rates." category="Business Tools" categoryHref="/dashboard" categoryIcon="💼" icon="💱" badge="free">
+        <ToolPageLayout title="Currency Converter" description="Convert between 80+ world currencies with real-time exchange rates." category="Business Tools" categoryHref="/business-tools" categoryIcon="💼" icon="💱" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 {error && (
                     <div style={{ background: '#FEF3C7', border: '1px solid #FDE68A', borderRadius: 10, padding: '12px 16px', marginBottom: 20, fontSize: '0.85rem', color: '#92400E' }}>

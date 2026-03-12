@@ -1,2 +1,9 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Sitemap
+Sitemap: https://toolvia.io/sitemap.xml
+
+# Disallow admin/dashboard routes (if you want to exclude them)
+# Disallow: /dashboard
+# Disallow: /api/

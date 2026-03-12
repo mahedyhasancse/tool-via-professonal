@@ -1,10 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Head } from '@inertiajs/react';
+import { Head, usePage, router, Link } from '@inertiajs/react';
 import Sidebar from '../Components/Layout/Sidebar';
 
 export default function DashboardLayout({ title, children }) {
+    const { auth } = usePage().props;
     const [search, setSearch] = useState('');
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    
+    // Get user name or default
+    const userName = auth?.user?.name || 'Guest';
+    const userInitial = userName.charAt(0).toUpperCase();
 
     // Close sidebar when route changes on mobile
     useEffect(() => {
@@ -76,10 +81,26 @@ export default function DashboardLayout({ title, children }) {
                             </button>
 
                             {/* User */}
-                            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                                <div className="user-avatar">W</div>
-                                <span className="user-name">Waqar</span>
-                            </div>
+                            {auth?.user ? (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                        <div className="user-avatar">{userInitial}</div>
+                                        <span className="user-name">{userName}</span>
+                                    </div>
+                                    <button 
+                                        onClick={() => router.post('/logout')}
+                                        className="btn btn-secondary btn-sm"
+                                        style={{ padding: '6px 14px', fontSize: '0.85rem' }}
+                                    >
+                                        Logout
+                                    </button>
+                                </div>
+                            ) : (
+                                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                                    <Link href="/login" className="btn btn-secondary btn-sm">Sign In</Link>
+                                    <Link href="/register" className="btn btn-primary btn-sm">Sign Up</Link>
+                                </div>
+                            )}
                         </div>
                     </header>
 

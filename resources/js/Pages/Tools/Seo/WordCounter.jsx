@@ -22,7 +22,7 @@ export default function WordCounter() {
         : [];
 
     return (
-        <ToolPageLayout title="Word Counter" description="Count words, characters, sentences, and reading time instantly." category="SEO Tools" categoryHref="/dashboard" categoryIcon="🔍" icon="📝" badge="free">
+        <ToolPageLayout title="Word Counter" description="Count words, characters, sentences, and reading time instantly." category="SEO Tools" categoryHref="/seo-tools" categoryIcon="🔍" icon="📝" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <textarea
                     value={text}

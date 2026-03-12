@@ -75,7 +75,7 @@ export default function ResumeBuilder() {
     const input = { width: '100%', padding: '11px 16px', borderRadius: 10, border: '1px solid var(--border)', fontSize: '0.88rem', color: 'var(--text-primary)', background: '#fff', outline: 'none', marginBottom: 16 };
 
     return (
-        <ToolPageLayout title="AI Resume Builder" description="Build a professional, ATS-friendly resume with AI in seconds." category="AI Tools" categoryHref="/dashboard/ai-tools" categoryIcon="🤖" icon="📋" badge="pro">
+        <ToolPageLayout title="AI Resume Builder" description="Build a professional, ATS-friendly resume with AI in seconds." category="AI Tools" categoryHref="/ai-tools" categoryIcon="🤖" icon="📋" badge="pro">
             <div style={{ padding: '36px 40px' }}>
                 {/* Hidden printable version for PDF */}
                 {editedResume && (

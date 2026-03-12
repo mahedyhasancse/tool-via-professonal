@@ -57,7 +57,7 @@ export default function MetaTagGenerator() {
     );
 
     return (
-        <ToolPageLayout title="Meta Tag Generator" description="Generate SEO-optimized meta tags and Open Graph tags instantly." category="SEO Tools" categoryHref="/dashboard" categoryIcon="🔍" icon="🏷️" badge="free">
+        <ToolPageLayout title="Meta Tag Generator" description="Generate SEO-optimized meta tags and Open Graph tags instantly." category="SEO Tools" categoryHref="/seo-tools" categoryIcon="🔍" icon="🏷️" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>

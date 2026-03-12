@@ -20,7 +20,7 @@ export default function EmailWriter() {
     const tones = ['professional', 'friendly', 'formal', 'casual', 'persuasive', 'urgent'];
 
     return (
-        <ToolPageLayout title="AI Email Writer" description="Write professional emails in seconds using Inception AI." category="AI Tools" categoryHref="/dashboard/ai-tools" categoryIcon="🤖" icon="✉️" badge="pro">
+        <ToolPageLayout title="AI Email Writer" description="Write professional emails in seconds using Inception AI." category="AI Tools" categoryHref="/ai-tools" categoryIcon="🤖" icon="✉️" badge="pro">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>

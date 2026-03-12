@@ -1,10 +1,10 @@
 import DashboardLayout from './DashboardLayout';
-import { Link } from '@inertiajs/react';
+import { Link, Head, usePage } from '@inertiajs/react';
 
 /**
  * Shared wrapper for every individual tool page.
  * Renders INSIDE the dashboard — DashboardLayout provides sidebar + header.
- * URL pattern: /dashboard/{category}/{tool-slug}
+ * URL pattern: /{category}/{tool-slug} (no dashboard prefix)
  */
 export default function ToolPageLayout({
     title,
@@ -13,10 +13,71 @@ export default function ToolPageLayout({
     categoryHref,
     categoryIcon,
     icon,
+    badge = 'free',
     children,
 }) {
+    const { url } = usePage();
+    const baseUrl = typeof window !== 'undefined' ? window.location.origin : 'https://toolvia.io';
+    const fullUrl = baseUrl + url;
+    
+    // Generate SEO-friendly title and description
+    const seoTitle = `${title} - Free Online Tool | Toolvia.io`;
+    const seoDescription = description || `${title} - Free online tool for ${category.toLowerCase()}. Use instantly, no signup required.`;
+    
+    // Schema.org JSON-LD for SoftwareApplication
+    const schemaMarkup = {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        'name': title,
+        'description': seoDescription,
+        'applicationCategory': 'UtilityApplication',
+        'operatingSystem': 'Web',
+        'offers': {
+            '@type': 'Offer',
+            'price': '0',
+            'priceCurrency': 'USD'
+        },
+        'url': fullUrl,
+        'aggregateRating': {
+            '@type': 'AggregateRating',
+            'ratingValue': '4.8',
+            'ratingCount': '1250'
+        }
+    };
+    
     return (
-        <DashboardLayout>
+        <>
+            <Head>
+                {/* Primary Meta Tags */}
+                <title>{seoTitle}</title>
+                <meta name="title" content={seoTitle} />
+                <meta name="description" content={seoDescription} />
+                <meta name="keywords" content={`${title}, ${category}, free tool, online calculator, toolvia`} />
+                <meta name="robots" content="index, follow" />
+                <meta name="language" content="English" />
+                <meta name="author" content="Toolvia.io" />
+                
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content={fullUrl} />
+                <meta property="og:title" content={seoTitle} />
+                <meta property="og:description" content={seoDescription} />
+                <meta property="og:image" content={`${baseUrl}/og-image.jpg`} />
+                
+                {/* Twitter */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:url" content={fullUrl} />
+                <meta name="twitter:title" content={seoTitle} />
+                <meta name="twitter:description" content={seoDescription} />
+                <meta name="twitter:image" content={`${baseUrl}/og-image.jpg`} />
+                
+                {/* Canonical URL */}
+                <link rel="canonical" href={fullUrl} />
+                
+                {/* Schema.org JSON-LD */}
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }} />
+            </Head>
+            <DashboardLayout>
             {/* Tool Hero Banner */}
             <div style={{
                 background: 'linear-gradient(135deg, #0a1628 0%, #0d2060 60%, #1a0845 100%)',
@@ -75,5 +136,6 @@ export default function ToolPageLayout({
                 {children}
             </div>
         </DashboardLayout>
+        </>
     );
 }

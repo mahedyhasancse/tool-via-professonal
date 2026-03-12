@@ -140,7 +140,7 @@ export function PdfMerge() {
     };
 
     return (
-        <ToolPageLayout title="PDF Merge" description="Merge multiple PDF files into one document instantly." category="PDF Tools" categoryHref="/dashboard" categoryIcon="📄" icon="📎" badge="free">
+        <ToolPageLayout title="PDF Merge" description="Merge multiple PDF files into one document instantly." category="PDF Tools" categoryHref="/pdf-tools" categoryIcon="📄" icon="📎" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div style={{ maxWidth: 800, margin: '0 auto' }}>
                     <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 24 }}>Merge PDF Files</h2>
@@ -248,7 +248,7 @@ export function PdfSplit() {
     };
 
     return (
-        <ToolPageLayout title="PDF Split" description="Split a PDF into multiple files by pages." category="PDF Tools" categoryHref="/dashboard" categoryIcon="📄" icon="✂️" badge="free">
+        <ToolPageLayout title="PDF Split" description="Split a PDF into multiple files by pages." category="PDF Tools" categoryHref="/pdf-tools" categoryIcon="📄" icon="✂️" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div style={{ maxWidth: 800, margin: '0 auto' }}>
                     <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 24 }}>Split PDF File</h2>
@@ -367,7 +367,7 @@ export function ImageToPdf() {
     };
 
     return (
-        <ToolPageLayout title="Image to PDF" description="Convert JPG, PNG, or WEBP images to a PDF document." category="PDF Tools" categoryHref="/dashboard" categoryIcon="📄" icon="🖼️" badge="free">
+        <ToolPageLayout title="Image to PDF" description="Convert JPG, PNG, or WEBP images to a PDF document." category="PDF Tools" categoryHref="/pdf-tools" categoryIcon="📄" icon="🖼️" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div style={{ maxWidth: 800, margin: '0 auto' }}>
                     <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 24 }}>Convert Images to PDF</h2>
@@ -468,7 +468,7 @@ export function PdfToJpg() {
     };
 
     return (
-        <ToolPageLayout title="PDF to JPG" description="Convert each PDF page to a high-quality JPG image." category="PDF Tools" categoryHref="/dashboard" categoryIcon="📄" icon="🖼️" badge="free">
+        <ToolPageLayout title="PDF to JPG" description="Convert each PDF page to a high-quality JPG image." category="PDF Tools" categoryHref="/pdf-tools" categoryIcon="📄" icon="🖼️" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div style={{ maxWidth: 800, margin: '0 auto' }}>
                     <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 24 }}>Convert PDF to JPG Images</h2>

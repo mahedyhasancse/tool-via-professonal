@@ -19,7 +19,7 @@ export default function BusinessName() {
     const styles = ['modern', 'classic', 'playful', 'professional', 'creative', 'minimal'];
 
     return (
-        <ToolPageLayout title="AI Business Name Generator" description="Generate creative, memorable business names with AI." category="AI Tools" categoryHref="/dashboard/ai-tools" categoryIcon="🤖" icon="🏢" badge="pro">
+        <ToolPageLayout title="AI Business Name Generator" description="Generate creative, memorable business names with AI." category="AI Tools" categoryHref="/ai-tools" categoryIcon="🤖" icon="🏢" badge="pro">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>

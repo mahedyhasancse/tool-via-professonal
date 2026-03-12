@@ -19,7 +19,7 @@ export default function RoiCalculator() {
     const s = { label: { display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: 8 }, input: { width: '100%', padding: '11px 16px', borderRadius: 10, border: '1px solid var(--border)', fontSize: '0.95rem', color: 'var(--text-primary)', background: '#fff', outline: 'none', marginBottom: 20 } };
 
     return (
-        <ToolPageLayout title="ROI Calculator" description="Measure the profitability and return on any investment." category="Calculators" categoryHref="/dashboard/calculators" categoryIcon="🧮" icon="💹" badge="free">
+        <ToolPageLayout title="ROI Calculator" description="Measure the profitability and return on any investment." category="Calculators" categoryHref="/calculators" categoryIcon="🧮" icon="💹" badge="free">
             <div style={{ padding: '36px 40px' }}>
                 <div className="grid grid-2" style={{ gap: 32 }}>
                     <div>
